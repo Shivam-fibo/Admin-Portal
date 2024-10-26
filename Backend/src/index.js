@@ -2,6 +2,7 @@ import { app } from "./app.js";
 import ConnetDB from "./db/database.js";
 import dotenv from 'dotenv'
 
+
 dotenv.config();
 
 ConnetDB()
