@@ -3,6 +3,7 @@ import cors from 'cors'
 import cookieParser from "cookie-parser";
 
 import userRoute from "./routes/user.router.js"
+import dataRoute from "./routes/data.router.js"
 const app = express();
 
 
@@ -17,6 +18,10 @@ app.use(express.static("public"));
 app.use(cookieParser());
 
 // Define routes directly in `app.js`
-app.use('/', userRoute)
+app.use('/user', userRoute);
+app.use('/api', dataRoute)
+app.get('/', (req, res) =>{
+    res.status(200).json("Everything wokring fine!!!")
+})
 
 export { app };
